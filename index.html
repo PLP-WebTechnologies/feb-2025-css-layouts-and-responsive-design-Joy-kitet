@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Layout with Flexbox</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #333;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav ul li {
+      cursor: pointer;
+    }
+    a{
+        color: white;
+    }
+
+    nav ul a li:hover {
+      text-decoration: underline;
+    }
+
+    /* Main layout */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 1rem;
+      gap: 1rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .sidebar, .content {
+      padding: 1rem;
+      background: #f4f4f4;
+      border-radius: 8px;
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .sidebar {
+      max-width: 300px;
+    }
+
+    .content {
+      flex: 3;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+
+      .sidebar, .content {
+        max-width: 100%;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .sidebar {
+        max-width: 35%;
+      }
+
+      .content {
+        max-width: 60%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Portfolio</div>
+    <ul>
+        <a href="#Home"><li>Home</li></a>
+        <a href="#About"><li>About</li></a>
+        <a href="#Services"><li>Services</li></a>
+        <a href="#Contact"><li>Contact</li></a>
+    
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="sidebar">
+        <img src="my photo.png" alt="my photo">
+    </div>
+
+    <div class="content">
+      <h2>My Profile</h2>
+      <p>My name is Debrajoy Kitet. I am a software engineer with a passion for web development. I love creating responsive and user-friendly websites.</p>
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
